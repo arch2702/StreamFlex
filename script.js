@@ -92,7 +92,9 @@ else if (fileType === "audio") {
         startTimer();
     });
     console.log(typeof jsmediatags);
-
+     
+    // audio cover page
+    
     jsmediatags.read(selectedVideo, {
         onSuccess: function (tag) {
             const existingCoverImg = videoPlayer.querySelector("img");
@@ -165,21 +167,23 @@ const toast= document.querySelector(".toast");
 /********************Speed Up********************/ 
 const speedUpHandler=() =>{
 const videoElement= document.querySelector("video");
-
 if(videoElement ==null){
     return;
 }
 if(videoElement.playbackRate>3){
     return;
 }
-const incresedSpeed= videoElement.playbackRate+ 0.5;
-videoElement.playbackRate=incresedSpeed;
-showToast(incresedSpeed+"X");
+
+const videoSpeed= videoElement.playbackRate+ 0.5;
+videoElement.playbackRate=videoSpeed;
+showToast(videoSpeed+"X");
+
 
 }
+
 /***********************Speed Down**************************/ 
 const speedDownHandler=()=>{
-    
+    const videoElement= document.querySelector("video");
 if(videoElement ==null){
     return;
 }
